@@ -3,29 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_everyday/data/userData.dart';
 
 class UnderStandObjMap extends StatefulWidget {
   const UnderStandObjMap({super.key});
 
   @override
   State<UnderStandObjMap> createState() => _UnderStandObjMapState();
-}
-
-class UserData {
-  final String username;
-  final String email;
-  final String address;
-  final String phone;
-  final int age;
-
-  UserData(
-      {required this.username,
-      required this.age,
-      required this.address,
-      required this.email,
-      required this.phone});
-
-  List car = [];
 }
 
 class _UnderStandObjMapState extends State<UnderStandObjMap> {
