@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_everyday/components/grid.dart';
 import 'package:flutter_everyday/components/horizontalScroll.dart';
 import 'package:flutter_everyday/components/objMap.dart';
 
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         margin: EdgeInsets.only(top: 40),
         padding: EdgeInsets.only(left: 10, right: 10),
-        child: UnderStandObjMap(),
+        child: GridDemoComp(),
       ),
     );
   }
