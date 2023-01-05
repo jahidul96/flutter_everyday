@@ -15,12 +15,9 @@ class GetApiCallScreen extends StatefulWidget {
 class _GetApiCallScreenState extends State<GetApiCallScreen> {
   List products = [];
   Future fetchData() async {
-    print("data fetching...");
-
     const url = "https://fakestoreapi.com/products";
-    final uri = Uri.parse(url);
-    final response = await http.get(uri);
-
+    final parsedUrl = Uri.parse(url);
+    final response = await http.get(parsedUrl);
     final body = response.body;
     final json = jsonDecode(body);
 
@@ -49,12 +46,22 @@ class _GetApiCallScreenState extends State<GetApiCallScreen> {
                   itemCount: products.length,
                   itemBuilder: (context, index) {
                     final title = products[index]["title"];
+                    final img = products[index]["image"];
                     return Container(
                       color: Colors.amber,
                       margin: EdgeInsets.all(10),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text(title),
+                        child: Column(
+                          children: [
+                            Text(title),
+                            Image.network(
+                              img,
+                              width: 100,
+                              height: 100,
+                            )
+                          ],
+                        ),
                       ),
                     );
                   }))
