@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_everyday/apicall/get_api_screen.dart';
 import 'package:flutter_everyday/components/appBar.dart';
 import 'package:flutter_everyday/components/card_comp.dart';
 import 'package:flutter_everyday/components/drawerDemo.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CardComp(),
+      home: GetApiCallScreen(),
     );
   }
 }
