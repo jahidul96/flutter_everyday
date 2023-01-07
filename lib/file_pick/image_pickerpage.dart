@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart';
 
 class ImagePickerPage extends StatefulWidget {
   const ImagePickerPage({super.key});
@@ -25,6 +27,8 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
       final image = await ImagePicker().pickImage(source: source);
       if (image == null) return;
       final imgTemp = File(image.path);
+
+      print(imgTemp);
 
       setState(() {
         _image = imgTemp;
