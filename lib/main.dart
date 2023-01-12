@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_everyday/apicall/demoapicall.dart';
-import 'package:flutter_everyday/apicall/get_api_screen.dart';
-import 'package:flutter_everyday/components/appBar.dart';
-import 'package:flutter_everyday/components/card_comp.dart';
-import 'package:flutter_everyday/components/drawerDemo.dart';
-import 'package:flutter_everyday/components/tabview/tabbar.dart';
 import 'package:flutter_everyday/file_pick/image_pickerpage.dart';
-import 'package:flutter_everyday/screens/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ImagePickerPage(),
+      home: const ImagePickerPage(),
     );
   }
 }
