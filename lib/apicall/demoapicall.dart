@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -24,6 +26,7 @@ class User {
 class _DemoApiCallScreenState extends State<DemoApiCallScreen> {
   // initiallized a empty map data placeholder
   User user = User("", "", "", false);
+  List users = [];
 
 // fetching data
   fetchData() async {
@@ -34,7 +37,7 @@ class _DemoApiCallScreenState extends State<DemoApiCallScreen> {
       print(response.statusCode);
 
       final body = response.body;
-      final data = jsonDecode(body) as Map;
+      final data = jsonDecode(body);
 
       setState(() {
         user.name = data["name"];
@@ -47,24 +50,47 @@ class _DemoApiCallScreenState extends State<DemoApiCallScreen> {
     }
   }
 
+// fetch list of data
+  getUsers() async {
+    try {
+      final baseUrl = "http://192.168.1.4:4000/all/users";
+      final parsedUrl = Uri.parse(baseUrl);
+      final response = await http.get(parsedUrl);
+      print(response.statusCode);
+
+      final body = response.body;
+      final data = jsonDecode(body);
+
+      print(data);
+
+      setState(() {
+        users = data;
+      });
+    } catch (e) {
+      print("error $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Demo api call page")),
       body: SafeArea(
-        child: ListView(
-          children: [
-            ListTile(
-              title: user.name.isEmpty ? Text("Username") : Text(user.name),
-              subtitle: user.email.isEmpty
-                  ? Text("username@gmail.com")
-                  : Text(user.email),
-            ),
-          ],
-        ),
-      ),
+          child: ListView.builder(
+              itemCount: users.length,
+              itemBuilder: (context, index) {
+                final sUser = User(users[index]["name"], users[index]["desc"],
+                    users[index]["email"], users[index]["isAdmin"]);
+                return ListTile(
+                  title:
+                      sUser.name.isEmpty ? Text("Username") : Text(sUser.name),
+                  subtitle: sUser.email.isEmpty
+                      ? Text("username@gmail.com")
+                      : Text(sUser.email),
+                );
+              })),
       floatingActionButton: FloatingActionButton(
-        onPressed: fetchData,
+        onPressed: getUsers,
         child: Icon(Icons.add),
       ),
     );
