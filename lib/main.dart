@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_everyday/components/large_appbar.dart';
 import 'package:flutter_everyday/file_pick/image_pickerpage.dart';
 
 void main() {
@@ -16,8 +17,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        useMaterial3: true,
       ),
-      home: const ImagePickerPage(),
+      home: const LargeAppBar(),
     );
   }
 }
