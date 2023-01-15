@@ -12,43 +12,60 @@ class DemoApiCallScreen extends StatefulWidget {
   State<DemoApiCallScreen> createState() => _DemoApiCallScreenState();
 }
 
+class User {
+  String name;
+  String email;
+  String desc;
+  bool isAdmin;
+
+  User(this.name, this.desc, this.email, this.isAdmin);
+}
+
 class _DemoApiCallScreenState extends State<DemoApiCallScreen> {
   // initiallized a empty map data placeholder
-  Map? product;
+  User user = User("", "", "", false);
 
 // fetching data
   fetchData() async {
-    final baseUrl = "https://fakestoreapi.com/products/1";
-    final parsedUrl = Uri.parse(baseUrl);
-    final response = await http.get(parsedUrl);
-    final body = response.body;
-    final maindata = jsonDecode(body);
+    try {
+      final baseUrl = "http://192.168.1.4:4000/user";
+      final parsedUrl = Uri.parse(baseUrl);
+      final response = await http.get(parsedUrl);
+      print(response.statusCode);
 
-    setState(() {
-      product = maindata;
-    });
-  }
+      final body = response.body;
+      final data = jsonDecode(body) as Map;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    fetchData();
-    super.initState();
+      setState(() {
+        user.name = data["name"];
+        user.email = data["email"];
+        user.desc = data["desc"];
+        user.isAdmin = data["isAdmin"];
+      });
+    } catch (e) {
+      print("error $e");
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Demo api call page")),
-      body: Container(
-        margin: EdgeInsets.all(15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: SafeArea(
+        child: ListView(
           children: [
-            product == null ? Text("data loading") : Text(product!["title"]),
+            ListTile(
+              title: user.name.isEmpty ? Text("Username") : Text(user.name),
+              subtitle: user.email.isEmpty
+                  ? Text("username@gmail.com")
+                  : Text(user.email),
+            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: fetchData,
+        child: Icon(Icons.add),
       ),
     );
   }

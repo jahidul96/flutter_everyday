@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_everyday/apicall/demoapicall.dart';
 import 'package:flutter_everyday/components/large_appbar.dart';
 import 'package:flutter_everyday/components/top_appbar_collapse.dart';
 import 'package:flutter_everyday/file_pick/image_pickerpage.dart';
@@ -18,9 +19,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        useMaterial3: true,
       ),
-      home: TopappbarCollapsable(),
+      home: DemoApiCallScreen(),
     );
   }
 }

@@ -6,16 +6,13 @@ const app = express();
 // port
 const PORT = 4000 || process.env.PORT;
 
-app.use((req, res, next) => {
-  console.log("this is a middlewares");
-  next();
-});
-
 // routes
-app.get("/main", (req, res) => {
+app.get("/user", (req, res) => {
   res.status(200).json({
-    message: "you have got our url right",
-    succes: true,
+    name: "jahidul islam",
+    email: "jahidul@gmail.com",
+    desc: "this is just fro demo purpose data!!",
+    isAdmin: true,
   });
 });
 
