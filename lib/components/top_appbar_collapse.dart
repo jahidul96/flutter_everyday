@@ -31,8 +31,11 @@ class TopappbarCollapsable extends StatelessWidget {
             childCount: 100,
             (context, index) {
               return ListTile(
+                leading: CircleAvatar(child: Text("1")),
                 title: Text("hell"),
                 subtitle: Text("123"),
+                trailing:
+                    IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
               );
             },
           ))
