@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_everyday/components/large_appbar.dart';
+import 'package:flutter_everyday/components/top_appbar_collapse.dart';
 import 'package:flutter_everyday/file_pick/image_pickerpage.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      home: const LargeAppBar(),
+      home: TopappbarCollapsable(),
     );
   }
 }
