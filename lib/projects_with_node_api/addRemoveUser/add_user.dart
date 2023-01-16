@@ -25,8 +25,11 @@ class _AddUserPageState extends State<AddUserPage> {
       final url = Uri.parse(baseUrl);
       Map data = {"username": username, "email": email, "password": password};
       final body = json.encode(data);
-      final response = await http.post(url,
-          headers: {"Content-type": "application/json"}, body: body);
+      final response = await http.post(
+        url,
+        headers: {"Content-type": "application/json"},
+        body: body,
+      );
       final encodedResponse = json.decode(response.body);
       print(response.statusCode);
       print(encodedResponse);

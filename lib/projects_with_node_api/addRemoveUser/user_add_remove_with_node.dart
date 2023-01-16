@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import "package:flutter/material.dart";
-import 'package:flutter_everyday/small_projects_with_api/addRemoveUser/add_user.dart';
+import 'package:flutter_everyday/projects_with_node_api/addRemoveUser/add_user.dart';
 
 class UserAddRemove extends StatefulWidget {
   const UserAddRemove({super.key});
