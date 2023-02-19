@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class LinearBackGroundPage extends StatelessWidget {
   const LinearBackGroundPage({super.key});
@@ -10,7 +7,7 @@ class LinearBackGroundPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomLeft,
@@ -18,7 +15,7 @@ class LinearBackGroundPage extends StatelessWidget {
         ),
         child: ListView.builder(
           itemBuilder: (context, index) {
-            return ListTile(
+            return const ListTile(
               leading: CircleAvatar(child: Text("no.")),
               title: Text("title"),
               subtitle: Text("subtitle"),

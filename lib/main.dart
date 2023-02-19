@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_everyday/apicall/demoapicall.dart';
-import 'package:flutter_everyday/components/large_appbar.dart';
+import 'package:flutter_everyday/components/alignmentcomp.dart';
 import 'package:flutter_everyday/components/linera_background.dart';
-import 'package:flutter_everyday/components/top_appbar_collapse.dart';
-import 'package:flutter_everyday/file_pick/image_pickerpage.dart';
-import 'package:flutter_everyday/projects_with_node_api/addRemoveUser/user_add_remove_with_node.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LinearBackGroundPage(),
+      home: const JumpingAlignmentComp(),
     );
   }
 }
