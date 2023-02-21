@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_everyday/components/alignmentcomp.dart';
+import 'package:flutter_everyday/components/graph_view_demo.dart';
 import 'package:flutter_everyday/components/linera_background.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const JumpingAlignmentComp(),
+      home: TreeViewPage(),
     );
   }
 }
