@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_everyday/provider/increase_decrease_provider.dart';
-import 'package:flutter_everyday/screens/provider_demo_page_one.dart';
+import 'package:flutter_everyday/provider/todoapp_provider.dart';
+import 'package:flutter_everyday/screens/todoappwithprovider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => IncreaseDecreaseProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => TodoAppProvider(),
         )
       ],
       child: MaterialApp(
@@ -25,7 +29,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const ProviderDemoPageOne(),
+        home: const TodoAppWithProvider(),
       ),
     );
   }
