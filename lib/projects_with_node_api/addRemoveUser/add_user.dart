@@ -3,8 +3,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:http/http.dart' as http;
 
 class AddUserPage extends StatefulWidget {
@@ -21,7 +19,7 @@ class _AddUserPageState extends State<AddUserPage> {
 
   registerUser() async {
     try {
-      final baseUrl = "http://192.168.1.4:4000/auth/register";
+      const baseUrl = "http://192.168.1.4:4000/auth/register";
       final url = Uri.parse(baseUrl);
       Map data = {"username": username, "email": email, "password": password};
       final body = json.encode(data);
