@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_everyday/components/tabbar_inmiddle.dart';
 import 'package:flutter_everyday/provider/increase_decrease_provider.dart';
 import 'package:flutter_everyday/provider/todoapp_provider.dart';
 import 'package:flutter_everyday/screens/todoappwithprovider.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const TodoAppWithProvider(),
+        home: const TabBarIntheMiddle(),
       ),
     );
   }
