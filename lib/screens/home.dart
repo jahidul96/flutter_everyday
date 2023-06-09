@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_everyday/features/notification.dart';
+import 'package:flutter_everyday/features/push_notification.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     notificationServices.getToken().then((value) {
       print(value);
     });
+    notificationServices.firebaseInit();
   }
 
   @override
