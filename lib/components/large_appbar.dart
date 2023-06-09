@@ -9,10 +9,10 @@ class LargeAppBar extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar.large(
-            leading: Icon(Icons.menu),
-            title: Text("Large app bar"),
+            leading: const Icon(Icons.menu),
+            title: const Text("Large app bar"),
             actions: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.more_vert))
+              IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
             ],
           ),
           SliverToBoxAdapter(

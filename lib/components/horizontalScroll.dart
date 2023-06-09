@@ -1,8 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class CardItem {
   final String img;
@@ -36,7 +34,7 @@ class _ItemHorizontalCompState extends State<ItemHorizontalComp> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height: 200,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
@@ -53,7 +51,7 @@ class _ItemHorizontalCompState extends State<ItemHorizontalComp> {
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(children: [
-          Container(
+          SizedBox(
             width: double.infinity,
             child: AspectRatio(
               aspectRatio: 4 / 4,

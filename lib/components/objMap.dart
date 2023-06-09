@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_everyday/data/userData.dart';
 
 class UnderStandObjMap extends StatefulWidget {
@@ -52,11 +50,9 @@ class _UnderStandObjMapState extends State<UnderStandObjMap> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: ListView.builder(
-            itemBuilder: (context, index) =>
-                userBuilder(person: userData[index]),
-            itemCount: userData.length));
+    return ListView.builder(
+        itemBuilder: (context, index) => userBuilder(person: userData[index]),
+        itemCount: userData.length);
   }
 
   Widget userBuilder({required UserData person}) => Container(

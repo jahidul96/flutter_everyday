@@ -48,14 +48,14 @@ class _TabBarIntheMiddleState extends State<TabBarIntheMiddle> {
                 Container(
                   color: Colors.blue,
                   height: 200,
-                  child: Center(
+                  child: const Center(
                     child: Text("All Tab"),
                   ),
                 ),
                 Container(
                   height: 200,
                   color: Colors.amber,
-                  child: Center(
+                  child: const Center(
                     child: Text("Popular Tab"),
                   ),
                 ),

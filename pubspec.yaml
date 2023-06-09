@@ -37,9 +37,22 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.5
   image_picker: ^0.8.6
-  path_provider: ^2.0.11
   graphview: ^1.1.1
   provider: ^6.0.5
+  firebase_core: ^2.7.1
+  firebase_auth: ^4.2.10
+  cloud_firestore: ^4.4.4
+  firebase_storage: ^11.0.16
+  get: ^4.6.5
+  google_maps_flutter: ^2.2.5
+  flutter_polyline_points: ^1.0.0
+  dio: ^5.1.2
+  permission_handler: ^10.2.0
+  flutter_downloader: ^1.10.4
+  path_provider: ^2.0.15
+  gallery_saver: ^2.3.2
+  firebase_messaging: ^14.6.2
+  flutter_local_notifications: ^14.1.1
 
 dev_dependencies:
   flutter_test:

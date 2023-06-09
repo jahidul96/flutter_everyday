@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 class TopappbarCollapsable extends StatelessWidget {
@@ -13,9 +15,9 @@ class TopappbarCollapsable extends StatelessWidget {
         slivers: [
           SliverAppBar(
             floating: true,
-            leading: Icon(Icons.menu),
-            title: Text("Appbar"),
-            actions: [Icon(Icons.settings)],
+            leading: const Icon(Icons.menu),
+            title: const Text("Appbar"),
+            actions: const [Icon(Icons.settings)],
             collapsedHeight: 200,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
@@ -31,9 +33,9 @@ class TopappbarCollapsable extends StatelessWidget {
             childCount: 100,
             (context, index) {
               return ListTile(
-                leading: CircleAvatar(child: Text("1")),
-                title: Text("hell"),
-                subtitle: Text("123"),
+                leading: const CircleAvatar(child: Text("1")),
+                title: const Text("hell"),
+                subtitle: const Text("123"),
                 trailing:
                     IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
               );

@@ -1,19 +1,32 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
+// ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_everyday/components/grid.dart';
-import 'package:http/http.dart' as http;
+import 'package:flutter_everyday/features/notification.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  NotificationServices notificationServices = NotificationServices();
+
+  @override
+  void initState() {
+    super.initState();
+    notificationServices.requestPermissonNotification();
+    notificationServices.getToken().then((value) {
+      print(value);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        margin: EdgeInsets.only(top: 40),
-        padding: EdgeInsets.only(left: 10, right: 10),
-        child: GridDemoComp(),
+      appBar: AppBar(
+        title: const Text("Push Notification"),
       ),
     );
   }

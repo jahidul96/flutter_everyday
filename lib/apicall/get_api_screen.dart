@@ -1,8 +1,8 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:http/http.dart' as http;
 
 class GetApiCallScreen extends StatefulWidget {
@@ -34,7 +34,7 @@ class _GetApiCallScreenState extends State<GetApiCallScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Get Api Call page"),
+        title: const Text("Get Api Call page"),
       ),
       body: Center(
           child: Column(
@@ -49,7 +49,7 @@ class _GetApiCallScreenState extends State<GetApiCallScreen> {
                     final img = products[index]["image"];
                     return Container(
                       color: Colors.amber,
-                      margin: EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
@@ -69,7 +69,7 @@ class _GetApiCallScreenState extends State<GetApiCallScreen> {
       )),
       floatingActionButton: FloatingActionButton(
         onPressed: fetchData,
-        child: Icon(Icons.call),
+        child: const Icon(Icons.call),
       ),
     );
   }

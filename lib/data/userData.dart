@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 class UserData {
   final String username;
   final String email;

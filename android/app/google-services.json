@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "278948997534",
+    "project_id": "flutter-everyday",
+    "storage_bucket": "flutter-everyday.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278948997534:android:fb83c114e1f87f3f070e8f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_everyday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278948997534-jilq34pran1k6k8iqi41sctj3u0hk15f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0p5BPCMRxBUjzVx5hOJzWadmQtuFt3Tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278948997534-jilq34pran1k6k8iqi41sctj3u0hk15f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

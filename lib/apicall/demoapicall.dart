@@ -1,10 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:http/http.dart' as http;
 
 class DemoApiCallScreen extends StatefulWidget {
@@ -31,7 +29,7 @@ class _DemoApiCallScreenState extends State<DemoApiCallScreen> {
 // fetching data
   fetchData() async {
     try {
-      final baseUrl = "http://192.168.1.4:4000/user";
+      const baseUrl = "http://192.168.1.4:4000/user";
       final parsedUrl = Uri.parse(baseUrl);
       final response = await http.get(parsedUrl);
       print(response.statusCode);
@@ -53,7 +51,7 @@ class _DemoApiCallScreenState extends State<DemoApiCallScreen> {
 // fetch list of data
   getUsers() async {
     try {
-      final baseUrl = "http://192.168.1.4:4000/all/users";
+      const baseUrl = "http://192.168.1.4:4000/all/users";
       final parsedUrl = Uri.parse(baseUrl);
       final response = await http.get(parsedUrl);
       print(response.statusCode);
