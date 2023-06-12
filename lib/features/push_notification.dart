@@ -1,10 +1,13 @@
 // ignore_for_file: avoid_print
 
+import 'dart:convert';
+import 'dart:io';
 import 'dart:math';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:http/http.dart' as http;
 
 class NotificationServices {
   FirebaseMessaging fmMessaging = FirebaseMessaging.instance;
@@ -90,5 +93,38 @@ class NotificationServices {
             notificationDetails);
       },
     );
+  }
+}
+
+// send push notification func with reciver device token/ title/ message
+sendPushNotificationToUser({
+  required String title,
+  required String pushToken,
+  required String message,
+}) async {
+  final body = {
+    "to": pushToken,
+    "notification": {
+      "title": title,
+      "body": message,
+    }
+  };
+
+  var url = Uri.parse("https://fcm.googleapis.com/fcm/send");
+
+// server key of firebase cloud messaging
+  var serverKey = "";
+
+  try {
+    var response = await http.post(url,
+        headers: {
+          HttpHeaders.contentTypeHeader: "application/json",
+          HttpHeaders.authorizationHeader: "key=$serverKey",
+        },
+        body: jsonEncode(body));
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
+  } catch (e) {
+    print(e);
   }
 }

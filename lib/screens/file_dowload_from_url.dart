@@ -22,12 +22,6 @@ class _FileDownloadScreenState extends State<FileDownloadScreen> {
     final baseStorage = await getExternalStorageDirectory();
     final status = await Permission.storage.request();
     if (status.isGranted) {
-      // var response = await dio.download(
-      //     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      //     "${baseStorage!.path}/${DateTime.now()}.mp4");
-
-      // print(response.statusCode);
-
       setState(() {
         isDownloading = true;
       });
