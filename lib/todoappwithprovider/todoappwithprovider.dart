@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_everyday/provider/todoapp_provider.dart';
+import 'package:flutter_everyday/todoappwithprovider/provider/todoapp_provider.dart';
 import 'package:provider/provider.dart';
 
 class TodoAppWithProvider extends StatefulWidget {

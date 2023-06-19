@@ -57,8 +57,6 @@ class NotificationServices {
 // initialization for messaging
   void firebaseInit() {
     FirebaseMessaging.onMessage.listen((message) {
-      print(message.notification!.title);
-      print(message.notification!.body);
       initLocalNotification(message);
       showNotification(message);
     });
